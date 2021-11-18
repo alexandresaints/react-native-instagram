@@ -14,9 +14,9 @@ export default function Feed(){
             id: '1',
             author: 'alexandresaintss',
             picture_url: 'https://pbs.twimg.com/media/FEP_sIeXIAMql5z?format=jpg&name=large',
-            likes: '',
-            description: '',
-            hashtags: '',
+            likes: '50',
+            description: 'Tô ansioso pra ver o Tobey e o Andrew! :o',
+            hashtags: '#homemaranha #tobeymaguire #andrewgarfield #tomholland',
             place: 'Cinema do Shopping'
         },
 
@@ -47,7 +47,7 @@ export default function Feed(){
 
                 <View style={styles.footer}>
                     <View style={styles.actions}>
-                        <View style={styles.leftAction}>
+                        <View style={styles.leftActions}>
                             <TouchableOpacity style={styles.action}>
                                 <Image source={like} />
                             </TouchableOpacity>
@@ -65,8 +65,11 @@ export default function Feed(){
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={styles.likes}></View>
-                    <View style={styles.comment}></View>
+                    <View>
+                        <Text style={styles.likes}>{post.likes} likes</Text>
+                        <Text style={styles.comment}>{post.description}</Text>
+                        <Text style={styles.hashtags}>{post.hashtags}</Text>
+                    </View>
                 </View>
             </View>
             </>
@@ -108,17 +111,24 @@ const styles = StyleSheet.create({
         height: 400
     },
     footer: {
-        paddingVertical: 15,
         paddingHorizontal: 15
     },
     actions: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        paddingVertical: 15,
     },
     action: {
         marginRight: 8
     },
-    leftAction: {
+    leftActions: {
         flexDirection: 'row'
+    },
+    likes: {
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    hashtags: {
+        color: '#002d5e'
     }
 })
