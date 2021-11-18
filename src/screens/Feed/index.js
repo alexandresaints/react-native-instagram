@@ -19,14 +19,32 @@ export default function Feed(){
             hashtags: '#homemaranha #tobeymaguire #andrewgarfield #tomholland',
             place: 'Cinema do Shopping'
         },
+        {
+            id: '2',
+            author: 'kamillasilva',
+            picture_url: 'https://www.rbsdirect.com.br/imagesrc/25635820.jpg?w=700',
+            likes: '186',
+            description: 'Deixa seu like aí!',
+            hashtags: '#sobrancelha #kamilla #designer #micro',
+            place: 'Rio de Janeiro'
+        },
+        {
+            id: '3',
+            author: 'viajeaqui',
+            picture_url: 'https://estadosunidosbrasil.com.br/files/2013/05/sanfrancisco-635x425.jpg',
+            likes: '98',
+            description: 'Venha fazer sua viagem internacional conosco!',
+            hashtags: '#sanfrancisco #viagem #eua #viageminternacional',
+            place: 'San Franscisco (EUA)'
+        }
 
     ]
 
     function renderItem({ item: post }){
         return(
             <>
-            <StatusBar barStyle="light-content" backgroundColor="#FFF" />
-            <View>
+            <StatusBar barStyle="light-content" backgroundColor="#000"/>
+            <View style={styles.post}>
                 <View style={styles.postHeader}>
                     <View style={styles.userInfo}>
                         <Text style={styles.author}>{post.author}</Text>
@@ -67,7 +85,7 @@ export default function Feed(){
                     </View>
                     <View>
                         <Text style={styles.likes}>{post.likes} likes</Text>
-                        <Text style={styles.comment}>{post.description}</Text>
+                        <Text style={styles.description}>{post.description}</Text>
                         <Text style={styles.hashtags}>{post.hashtags}</Text>
                     </View>
                 </View>
@@ -88,11 +106,16 @@ export default function Feed(){
 }
 
 const styles = StyleSheet.create({
+    post: {
+        marginVertical: 15
+    },
+
     postHeader: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 15,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 15
     },
     postOptions: {},
     userInfo: {},
@@ -130,5 +153,9 @@ const styles = StyleSheet.create({
     },
     hashtags: {
         color: '#002d5e'
+    },
+    description: {
+        color: '#000',
+        lineHeight: 18
     }
 })

@@ -1,12 +1,7 @@
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
 
-import Feed from './src/screens/Feed'
+import Route from './src/routes'
 
 export default function App(){
-  return(
-    <SafeAreaView>
-      <Feed/>
-    </SafeAreaView>
-  )
+  return <Route/>
 }
