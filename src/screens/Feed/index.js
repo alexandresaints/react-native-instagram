@@ -1,5 +1,5 @@
 import React from "react";
-import {View, FlatList, Image, StyleSheet, Text, TouchableOpacity, StatusBar } from "react-native";
+import {View, SafeAreaView, FlatList, Image, StyleSheet, Text, TouchableOpacity, StatusBar } from "react-native";
 
 import options from '../../assets/instagram-icons/options.png'
 import like from '../../assets/instagram-icons/like.png'
@@ -95,13 +95,13 @@ export default function Feed(){
     }
 
     return(
-        <View>
+        <SafeAreaView>
             <FlatList
                 data={posts}
                 keyExtractor={item => item.id}
                 renderItem={renderItem}
             />
-        </View>
+        </SafeAreaView>
     )
 }
 
