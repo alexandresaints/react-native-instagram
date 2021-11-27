@@ -1,5 +1,8 @@
 import React from "react";
-import {View, SafeAreaView, FlatList, Image, StyleSheet, Text, TouchableOpacity, StatusBar } from "react-native";
+import {View, SafeAreaView, FlatList, Image, StyleSheet, Text, TouchableOpacity, StatusBar, ScrollView } from "react-native";
+import { TextInput } from "react-native-gesture-handler";
+
+import Stories from '../../components/Stories/index'
 
 import options from '../../assets/instagram-icons/options.png'
 import like from '../../assets/instagram-icons/like.png'
@@ -7,35 +10,42 @@ import comment from '../../assets/instagram-icons/comment.png'
 import send from '../../assets/instagram-icons/send.png'
 import save from '../../assets/instagram-icons/save.png'
 
+import kamilla from'../../assets/images/kamilla.png'
+import alexandre from'../../assets/images/alexandre.png'
+import viagem from'../../assets/images/viagem.png'
+
 export default function Feed(){
 
     const posts = [
         {
             id: '1',
+            photo: alexandre,
             author: 'alexandresaintss',
             picture_url: 'https://pbs.twimg.com/media/FEP_sIeXIAMql5z?format=jpg&name=large',
-            likes: '50',
+            likes: 'outras 50 pessoas',
             description: 'Tô ansioso pra ver o Tobey e o Andrew! :o',
             hashtags: '#homemaranha #tobeymaguire #andrewgarfield #tomholland',
             place: 'Cinema do Shopping'
         },
         {
             id: '2',
+            photo: kamilla,
             author: 'kamillasilva',
             picture_url: 'https://www.rbsdirect.com.br/imagesrc/25635820.jpg?w=700',
-            likes: '186',
+            likes: 'outras 186 pessoas',
             description: 'Deixa seu like aí!',
             hashtags: '#sobrancelha #kamilla #designer #micro',
             place: 'Rio de Janeiro'
         },
         {
             id: '3',
+            photo: viagem,
             author: 'viajeaqui',
             picture_url: 'https://estadosunidosbrasil.com.br/files/2013/05/sanfrancisco-635x425.jpg',
-            likes: '98',
+            likes: 'outras 98 pessoas',
             description: 'Venha fazer sua viagem internacional conosco!',
             hashtags: '#sanfrancisco #viagem #eua #viageminternacional',
-            place: 'San Franscisco (EUA)'
+            place: 'San Franscisco'
         }
 
     ]
@@ -47,8 +57,15 @@ export default function Feed(){
             <View style={styles.post}>
                 <View style={styles.postHeader}>
                     <View style={styles.userInfo}>
-                        <Text style={styles.author}>{post.author}</Text>
-                        <Text style={styles.place}>{post.place}</Text>
+                        <View style={styles.authorContainer}>
+                            <TouchableOpacity>
+                                <Image source={post.photo} style={styles.photo}/>
+                            </TouchableOpacity>
+                        <View style={styles.containerInfo}>
+                            <Text style={styles.author}>{post.author}</Text>
+                            <Text style={styles.place}>{post.place}</Text>
+                        </View>
+                        </View>
                     </View>
 
                     <View style={styles.postOptions}>
@@ -84,9 +101,13 @@ export default function Feed(){
                         </View>
                     </View>
                     <View>
-                        <Text style={styles.likes}>{post.likes} likes</Text>
-                        <Text style={styles.description}>{post.description}</Text>
+                        <Text style={styles.likes}>Curtido por oipedrohenry e {post.likes}</Text>
+                        <View style={styles.authorContainer}>
+                            <Text style={styles.author}>{post.author} </Text>
+                            <Text style={styles.description}>{post.description}</Text>
+                        </View>
                         <Text style={styles.hashtags}>{post.hashtags}</Text>
+                        <TextInput placeholder='Adicione um comentário...' style={styles.input}>{post.input}</TextInput>
                     </View>
                 </View>
             </View>
@@ -97,7 +118,10 @@ export default function Feed(){
     return(
         <SafeAreaView>
             <FlatList
+                style={{backgroundColor: 'white'}}
                 data={posts}
+                ListHeaderComponent={Stories}
+                header={Stories}
                 keyExtractor={item => item.id}
                 renderItem={renderItem}
             />
@@ -107,7 +131,7 @@ export default function Feed(){
 
 const styles = StyleSheet.create({
     post: {
-        marginVertical: 15
+        marginVertical: 10
     },
 
     postHeader: {
@@ -122,12 +146,26 @@ const styles = StyleSheet.create({
     author: {
         fontSize: 14,
         color: '#000',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
 
+    },
+    authorContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    containerInfo: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        marginLeft: 5
     },
     place: {
         fontSize: 12,
         color: '#666'
+    },
+    photo: {
+        width: 40,
+        height: 40,
+        borderRadius: 50
     },
     picture_url: {
         width: '100%',
@@ -148,7 +186,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     likes: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: 'bold'
     },
     hashtags: {
@@ -156,6 +194,11 @@ const styles = StyleSheet.create({
     },
     description: {
         color: '#000',
+        lineHeight: 18
+    },
+    input: {
+        color: '#000',
+        borderColor: 'gray',
         lineHeight: 18
     }
 })
