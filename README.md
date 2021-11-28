@@ -26,4 +26,5 @@ React-Native, using the libs: react-navigation, react-navigation-stack, react-ge
 
 ## Project preview:
 
-Uploading insta.mp4…
+https://user-images.githubusercontent.com/73872086/143724742-064b5138-44a3-4434-9b9e-5d39f16ba75f.mp4
+
