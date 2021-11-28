@@ -48,7 +48,7 @@ export default function Login({navigation}){
                     <LoginButton title='Continuar como Alexandre Saints'/>
                 </TouchableOpacity>
 
-                <View style={{top: 180, alignItems: 'center'}}>
+                <View style={{top: 140, alignItems: 'center'}}>
                     <View style={{height: 1, backgroundColor: 'black', width: 400}} />
                     <View style={{flexDirection: 'row', top: 10}}>
                         <Text style={{fontSize: 12}}>Não tem conta?</Text>
