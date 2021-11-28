@@ -25,7 +25,8 @@ export default function Feed(){
             likes: 'outras 50 pessoas',
             description: 'Tô ansioso pra ver o Tobey e o Andrew! :o',
             hashtags: '#homemaranha #tobeymaguire #andrewgarfield #tomholland',
-            place: 'Cinema do Shopping'
+            place: 'Cinema do Shopping',
+            time: '26'
         },
         {
             id: '2',
@@ -35,7 +36,8 @@ export default function Feed(){
             likes: 'outras 186 pessoas',
             description: 'Deixa seu like aí!',
             hashtags: '#sobrancelha #kamilla #designer #micro',
-            place: 'Rio de Janeiro'
+            place: 'Rio de Janeiro',
+            time: '35'
         },
         {
             id: '3',
@@ -45,7 +47,8 @@ export default function Feed(){
             likes: 'outras 98 pessoas',
             description: 'Venha fazer sua viagem internacional conosco!',
             hashtags: '#sanfrancisco #viagem #eua #viageminternacional',
-            place: 'San Franscisco'
+            place: 'San Franscisco',
+            time: '50'
         }
 
     ]
@@ -107,7 +110,11 @@ export default function Feed(){
                             <Text style={styles.description}>{post.description}</Text>
                         </View>
                         <Text style={styles.hashtags}>{post.hashtags}</Text>
+                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                        <Image source={post.photo} style={styles.photoComment}/>
                         <TextInput placeholder='Adicione um comentário...' style={styles.input}>{post.input}</TextInput>
+                        </View>
+                        <Text style={styles.time}>há {post.time} minutos</Text>
                     </View>
                 </View>
             </View>
@@ -167,6 +174,11 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 50
     },
+    photoComment: {
+        width: 25,
+        height: 25,
+        borderRadius: 50
+    },
     picture_url: {
         width: '100%',
         height: 400
@@ -200,5 +212,9 @@ const styles = StyleSheet.create({
         color: '#000',
         borderColor: 'gray',
         lineHeight: 18
+    },
+    time: {
+        fontSize: 12,
+        marginLeft: 5
     }
 })

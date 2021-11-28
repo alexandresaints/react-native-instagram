@@ -9,7 +9,7 @@ import camera from '../../assets/instagram-icons/camera.png'
 export default function Navbar(){
         return(
             <>
-    <View style={{flexDirection: 'row',}}>
+    <View style={{flexDirection: 'row'}}>
 
         <Image source={logo} style={styles.logo}/>
 
