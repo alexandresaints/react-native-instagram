@@ -11,7 +11,9 @@ React-Native, usando as libs: react-navigation, react-navigation-stack, react-ge
 
 ## Visualização do projeto:
 
-https://user-images.githubusercontent.com/73872086/143724733-c5450a49-4908-4512-b264-5f4eb7acfccc.mp4
+
+https://user-images.githubusercontent.com/73872086/143893701-3c1ca00c-cb65-4b7c-803d-8e0358ffd2f1.mp4
+
 
 ### 🇺🇸
 
@@ -26,5 +28,6 @@ React-Native, using the libs: react-navigation, react-navigation-stack, react-ge
 
 ## Project preview:
 
-https://user-images.githubusercontent.com/73872086/143724742-064b5138-44a3-4434-9b9e-5d39f16ba75f.mp4
+
+https://user-images.githubusercontent.com/73872086/143893755-e40b3d88-98a3-43be-945d-4fb398383d04.mp4
 
