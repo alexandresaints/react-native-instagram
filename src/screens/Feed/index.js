@@ -112,7 +112,7 @@ export default function Feed(){
                         <Text style={styles.hashtags}>{post.hashtags}</Text>
                         <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <Image source={post.photo} style={styles.photoComment}/>
-                        <TextInput placeholder='Adicione um comentário...' style={styles.input}>{post.input}</TextInput>
+                        <TextInput placeholder='Adicione um comentário...' placeholderTextColor="#878787" style={styles.input}>{post.input}</TextInput>
                         </View>
                         <Text style={styles.time}>há {post.time} minutos</Text>
                     </View>
@@ -167,7 +167,8 @@ const styles = StyleSheet.create({
     },
     place: {
         fontSize: 12,
-        color: '#666'
+        color: '#666',
+        color: '#878787'
     },
     photo: {
         width: 40,
@@ -199,6 +200,7 @@ const styles = StyleSheet.create({
     },
     likes: {
         fontSize: 14,
+        color: '#878787',
         fontWeight: 'bold'
     },
     hashtags: {
@@ -215,6 +217,7 @@ const styles = StyleSheet.create({
     },
     time: {
         fontSize: 12,
+        color: '#878787',
         marginLeft: 5
     }
 })

@@ -12,14 +12,14 @@ export default function Login({navigation}){
     return(
         <SafeAreaView>
             <View style={styles.post}>
-                <Text style={{bottom: 190}}>português (Brasil)</Text>
+                <Text style={{bottom: 190, color: '#878787'}}>português (Brasil)</Text>
                 <View>
                     <Image source={logo} style={{width: 235, height: 66}} />
                 </View>
 
                 <View>
-                    <Input placeholder='Número de telefone, email ou nome de usuário'></Input>
-                    <Input placeholder='Senha' secureTextEntry={true}></Input>
+                    <Input color='#878787' placeholder='Número de telefone, email ou nome de usuário' placeholderTextColor="#878787"></Input>
+                    <Input color='#878787' placeholder='Senha' secureTextEntry={true} placeholderTextColor="#878787"></Input>
                 </View>
 
                 <TouchableOpacity style={{width: 355, top: 10, zIndex: 1}}>
@@ -30,7 +30,7 @@ export default function Login({navigation}){
                 </TouchableOpacity>
 
                 <View style={styles.helpText}>
-                    <Text style={{fontSize: 12}}>Esqueceu seus dados de login?</Text>
+                    <Text style={{fontSize: 12, color: '#878787'}}>Esqueceu seus dados de login?</Text>
                     <TouchableOpacity>
                     <Text style={styles.link}> Obtenha ajuda para entrar.</Text>
                     </TouchableOpacity>
@@ -51,7 +51,7 @@ export default function Login({navigation}){
                 <View style={{top: 140, alignItems: 'center'}}>
                     <View style={{height: 1, backgroundColor: 'black', width: 400}} />
                     <View style={{flexDirection: 'row', top: 10}}>
-                        <Text style={{fontSize: 12}}>Não tem conta?</Text>
+                        <Text style={{fontSize: 12, color: '#878787'}}>Não tem conta?</Text>
                             <TouchableOpacity>
                             <Text style={{fontWeight: 'bold', color: '#060B41', fontSize: 12}}> Cadastre-se.</Text>
                             </TouchableOpacity>
@@ -70,10 +70,11 @@ const styles = StyleSheet.create({
     },
     helpText: {
         flexDirection: 'row',
+        color: "#878787",
         fontSize: 15,
         top: 20
     },
     link: {fontWeight: 'bold', color: '#060B41', fontSize: 12},
 
-    lineText: {width: 30, textAlign: 'center', fontWeight: 'bold'}
+    lineText: {width: 30, textAlign: 'center', fontWeight: 'bold', color: '#878787'}
 })
